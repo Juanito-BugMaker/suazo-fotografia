@@ -1,9 +1,11 @@
-# Usamos una imagen muy ligera de Nginx
-FROM nginx:alpine
+FROM caddy:alpine
 
-# Copiamos los archivos estáticos a la carpeta pública de Nginx
-COPY index.html /usr/share/nginx/html/
-COPY style.css /usr/share/nginx/html/
+# Copiamos la configuración de Caddy
+COPY Caddyfile /etc/caddy/Caddyfile
 
-# Exponemos el puerto 80
-EXPOSE 80
+# Copiamos los archivos estáticos de tu web
+COPY index.html /usr/share/caddy/
+COPY style.css /usr/share/caddy/
+
+# Exponemos los puertos HTTP (80) y HTTPS (443)
+EXPOSE 80 443
