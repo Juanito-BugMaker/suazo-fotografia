@@ -1,7 +1,5 @@
 suazofotografia.duckdns.org {
-    tls suazo0131994@gmail.com {
-        issuer zerossl
-    }
+    tls suazo0131994@gmail.com
     root * /usr/share/caddy
     file_server
 }
