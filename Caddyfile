@@ -1,8 +1,6 @@
 suazofotografia.duckdns.org {
     tls {
-        issuer acme {
-            disable_tlsalpn_challenge
-        }
+        issuer zerossl
     }
     root * /usr/share/caddy
     file_server
